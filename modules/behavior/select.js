@@ -270,6 +270,8 @@ export function behaviorSelect(context) {
 
 
     function processClick(datum, isMultiselect, point, alsoSelectId) {
+        var originalDatum = datum;
+
         var mode = context.mode();
         var showMenu = _showMenu;
         var interactionType = _lastInteractionType;
@@ -283,6 +285,26 @@ export function behaviorSelect(context) {
         }
 
         var newMode;
+
+        var dataForHook = {
+            datum,
+            isMultiselect,
+            point,
+            alsoSelectId,
+            originalDatum,
+        };
+        const {
+            isHooked,
+            hookProps: {
+                useDefaultAfterProcess
+            }
+        } = window.selectBehaviorProcessClickHook.execHooks(dataForHook);
+        if (isHooked) {
+            if (useDefaultAfterProcess) {
+                defaultAfterProcess();
+            }
+            return;
+        }
 
         if (datum instanceof osmEntity) {
             // targeting an entity
@@ -350,12 +372,17 @@ export function behaviorSelect(context) {
             }
         }
 
-        context.ui().closeEditMenu();
-
-        // always request to show the edit menu in case the mode needs it
-        if (showMenu) context.ui().showEditMenu(point, interactionType);
-
-        resetProperties();
+        defaultAfterProcess();
+        function defaultAfterProcess () {
+          context.ui()
+            .closeEditMenu();
+          // always request to show the edit menu in case the mode needs it
+          if (showMenu) {
+            context.ui()
+              .showEditMenu(point, interactionType);
+          }
+          resetProperties();
+        }
     }
 
 

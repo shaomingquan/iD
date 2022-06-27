@@ -68,7 +68,7 @@ export function svgLayers(projection, context) {
             .append('g')
             .attr('class', function(d) { return 'data-layer ' + d.id; })
             .merge(groups)
-            .each(function(d) { d3_select(this).call(d.layer); });
+            .each(function(d) { d3_select(this).call(d.layer.init || d.layer); });
     }
 
 
@@ -119,5 +119,6 @@ export function svgLayers(projection, context) {
     };
 
 
+    utilRebind(drawLayers, dispatch, 'call');
     return utilRebind(drawLayers, dispatch, 'on');
 }

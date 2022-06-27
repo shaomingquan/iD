@@ -27,9 +27,11 @@ export function uiSidebar(context) {
     var keepRightEditor = uiKeepRightEditor(context);
     var osmoseEditor = uiOsmoseEditor(context);
     var _current;
-    var _wasData = false;
-    var _wasNote = false;
-    var _wasQaItem = false;
+    var was = {
+        data: false,
+        note: false,
+        qaItem: false,
+    };
 
     // use pointer events on supported platforms; fallback to mouse events
     var _pointerPrefix = 'PointerEvent' in window ? 'pointer' : 'mouse';
@@ -176,7 +178,7 @@ export function uiSidebar(context) {
         function hover(targets) {
             var datum = targets && targets.length && targets[0];
             if (datum && datum.__featurehash__) {   // hovering on data
-                _wasData = true;
+                was.Data = true;
                 sidebar
                     .show(dataEditor.datum(datum));
 
@@ -185,7 +187,7 @@ export function uiSidebar(context) {
 
             } else if (datum instanceof osmNote) {
                 if (context.mode().id === 'drag-note') return;
-                _wasNote = true;
+                was.Note = true;
 
                 var osm = services.osm;
                 if (osm) {
@@ -199,7 +201,7 @@ export function uiSidebar(context) {
                     .classed('inspector-hover', true);
 
             } else if (datum instanceof QAItem) {
-                _wasQaItem = true;
+                was.qaItem = true;
 
                 var errService = services[datum.service];
                 if (errService) {
@@ -252,10 +254,10 @@ export function uiSidebar(context) {
                 inspector
                     .state('hide');
 
-            } else if (_wasData || _wasNote || _wasQaItem) {
-                _wasNote = false;
-                _wasData = false;
-                _wasQaItem = false;
+            } else if (was.Data || was.Note || was.qaItem) {
+                was.Note = false;
+                was.Data = false;
+                was.qaItem = false;
                 context.container().selectAll('.note').classed('hover', false);
                 context.container().selectAll('.qaItem').classed('hover', false);
                 sidebar.hide();
@@ -439,6 +441,7 @@ export function uiSidebar(context) {
     sidebar.expand = function() {};
     sidebar.collapse = function() {};
     sidebar.toggle = function() {};
+    sidebar.currentWas = () => was;
 
     return sidebar;
 }

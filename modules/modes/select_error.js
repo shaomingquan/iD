@@ -162,6 +162,14 @@ export function modeSelectError(context, selectedErrorID, selectedErrorService) 
         context.features().forceVisible([]);
     };
 
+    mode.setErrorEditor = (nextEditor) => {
+        errorEditor = nextEditor;
+        return mode;
+    };
+    mode.setErrorService = (nextSercice) => {
+        errorService = nextSercice;
+        return mode;
+    };
 
     return mode;
 }
