@@ -603,27 +603,27 @@ export function uiInit(context) {
                 .classed('hide', false);
             if (hidePanes.empty()) {
                 showPane
-                    .style(side, '-500px')
-                    .transition()
-                    .duration(200)
+                    // .style(side, '-500px')
+                    // .transition()
+                    // .duration(200)
                     .style(side, '0px');
             } else {
                 showPane
                     .style(side, '0px');
             }
         } else {
-            hidePanes
-                .classed('shown', true)
-                .classed('hide', false)
-                .style(side, '0px')
-                .transition()
-                .duration(200)
-                .style(side, '-500px')
-                .on('end', function() {
-                    d3_select(this)
-                        .classed('shown', false)
-                        .classed('hide', true);
-                });
+            // hidePanes
+                // .classed('shown', true)
+                // .classed('hide', false)
+                // .style(side, '0px')
+                // .transition()
+                // .duration(200)
+                // .style(side, '-500px')
+                // .on('end', function() {
+                //     d3_select(this)
+                //         .classed('shown', false)
+                //         .classed('hide', true);
+                // });
         }
     };
 

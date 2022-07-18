@@ -172,6 +172,9 @@ sources.forEach(source => {
   imagery.push(im);
 });
 
+if (fs.existsSync('./data/karta_imagery.json')) {
+  imagery = imagery.concat(JSON.parse(fs.readFileSync('./data/karta_imagery.json')));
+}
 
 imagery.sort((a, b) => a.name.localeCompare(b.name));
 

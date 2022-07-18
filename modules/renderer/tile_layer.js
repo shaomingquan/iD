@@ -202,7 +202,25 @@ export function rendererTileLayer(context) {
             .attr('draggable', 'false')
             .style('width', _tileSize + 'px')
             .style('height', _tileSize + 'px')
-            .attr('src', function(d) { return d[3]; })
+            .attr('src', function (d, i, el) {
+                const url = d[3];
+                if (_source.auth_type && _source.authorization) {
+                  fetch(url, {
+                    headers: {
+                      AuthType: _source.auth_type,
+                      Authorization: _source.authorization
+                    }
+                  })
+                    .then(res => res.blob())
+                    .then(blob => {
+                      d3_select(el[i])
+                        .attr('src', URL.createObjectURL(blob));
+                    });
+                  // return url;
+                } else {
+                  return url;
+                }
+              })
             .on('error', error)
             .on('load', load)
           .merge(image)

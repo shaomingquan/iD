@@ -836,6 +836,17 @@ en:
       improveOSM:
         tooltip: Missing data detected by improveosm.org
         title: ImproveOSM Issues
+      improveOSMPrivate:
+        tooltip: Missing data detected by grab.improve-osm.org
+        title: ImproveOSM Private
+      improveOSMPrivate-turnRestriction:
+        tooltip: 'Turn Restriction'
+      improveOSMPrivate-roadVersatility:
+        tooltip: 'Road Versatility'
+      improveOSMPrivate-speedLimit:
+        tooltip: 'Speed Limit'
+      improveOSMPrivate-oneWay:
+        tooltip: 'One Way'
       osmose:
         tooltip: Data issues detected by osmose.openstreetmap.fr
         title: Osmose Issues

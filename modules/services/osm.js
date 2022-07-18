@@ -2,7 +2,7 @@ import _throttle from 'lodash-es/throttle';
 
 import { dispatch as d3_dispatch } from 'd3-dispatch';
 import { json as d3_json, xml as d3_xml } from 'd3-fetch';
-import { osmAuth } from 'osm-auth';
+import osmAuth from 'osm-auth';
 import RBush from 'rbush';
 
 import { JXON } from '../util/jxon';
@@ -18,10 +18,8 @@ var urlroot = 'https://www.openstreetmap.org';
 var redirectPath = window.location.origin + window.location.pathname;
 var oauth = osmAuth({
     url: urlroot,
-    client_id: '0tmNTmd0Jo1dQp4AUmMBLtGiD9YpMuXzHefitcuVStc',
-    client_secret: 'BTlNrNxIPitHdL4sP2clHw5KLoee9aKkA7dQbc0Bj7Q',
-    scope: 'read_prefs write_prefs write_api read_gpx write_notes',
-    redirect_uri: redirectPath + 'land.html',
+    oauth_consumer_key: '5A043yRSEugj4DJ5TljuapfnrflWDte8jTOcWLlT',
+    oauth_secret: 'aB3jKq1TRsCOUrfOIZ6oQMEDmv2ptV76PA54NGLL',
     loading: authLoading,
     done: authDone
 });

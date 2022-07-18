@@ -239,10 +239,11 @@ export function rendererBackground(context) {
       .filter(d => !d.source().isLocatorOverlay() && !d.source().isHidden())
       .forEach(d => imageryUsed.push(d.source().imageryUsed()));
 
-    const dataLayer = context.layers().layer('data');
-    if (dataLayer && dataLayer.enabled() && dataLayer.hasData()) {
-      imageryUsed.push(dataLayer.getSrc());
-    }
+    // GD-1363
+    // const dataLayer = context.layers().layer('data');
+    // if (dataLayer && dataLayer.enabled() && dataLayer.hasData()) {
+    //   imageryUsed.push(dataLayer.getSrc());
+    // }
 
     const photoOverlayLayers = {
       streetside: 'Bing Streetside',
