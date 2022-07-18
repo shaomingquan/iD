@@ -54,15 +54,22 @@ _Breaking developer changes, which may affect downstream projects or sites that 
 * Don't render `railway=platform_edge` like train tracks ([#9142], thanks [@k-yle])
 * Fix leaking of localized tag values into raw tags by multiCombo fields ([#9164], thanks [@1ec5])
 * Fix localizable labels in multiCombo fields ("chips") being rendered multiple times ([#9169])
+* Fix missing styling when rendering of proposed footway/cycleway/path bridges ([#9172], thanks [@k-yle])
+* Fix some boundary lines (and preset) not hidden by the map features filter ([#9171], thanks [@k-yle])
+* Fix iD using invalid user selected imagery ([#8732], thanks [@renancleyson-dev])
 #### :rocket: Presets
 * Disable taginfo suggestions for the `via` field ([#9140], thanks [@k-yle])
 * Treat `surface=chipseal` as a paved surface ([#9139], thanks [@k-yle])
 * Better fallback icons for untagged points, vertices, lines and areas ([#9157])
 * Add fallback values for access field for barrier presets
+* Support incrementing cardinal directions with the up/down buttons ([#9141], thanks [@k-yle])
 #### :hammer: Development
+* Reduce uses of unsafe html injecting code
+* Upgrade dependencies: maki to `v8.0`, `osm-community-index` to `v5.2`, `d3` to `v7.6`, `togeojson` to `v5.2`, `mocha` to `v10`
 
 
 [#8419]: https://github.com/openstreetmap/iD/issues/8419
+[#8732]: https://github.com/openstreetmap/iD/issues/8732
 [#8881]: https://github.com/openstreetmap/iD/issues/8881
 [#8975]: https://github.com/openstreetmap/iD/pull/8975
 [#9018]: https://github.com/openstreetmap/iD/issues/9018
@@ -71,14 +78,18 @@ _Breaking developer changes, which may affect downstream projects or sites that 
 [#9110]: https://github.com/openstreetmap/iD/issues/9110
 [#9139]: https://github.com/openstreetmap/iD/pull/9139
 [#9140]: https://github.com/openstreetmap/iD/pull/9140
+[#9141]: https://github.com/openstreetmap/iD/pull/9141
 [#9142]: https://github.com/openstreetmap/iD/pull/9142
 [#9157]: https://github.com/openstreetmap/iD/issues/9157
 [#9164]: https://github.com/openstreetmap/iD/issues/9164
 [#9169]: https://github.com/openstreetmap/iD/issues/9169
+[#9171]: https://github.com/openstreetmap/iD/pull/9171
+[#9172]: https://github.com/openstreetmap/iD/pull/9172
 [@furkanmutlu]: https://github.com/furkanmutlu
 [@JackNUMBER]: https://github.com/JackNUMBER
 [@aaditya0000]: https://github.com/aaditya0000
 [@paulklie]: https://github.com/paulklie
+[@renancleyson-dev]: https://github.com/renancleyson-dev
 
 
 # 2.21.1
