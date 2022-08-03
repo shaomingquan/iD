@@ -45,6 +45,11 @@ _Breaking developer changes, which may affect downstream projects or sites that 
 * Consider lifecycle prefixes when deciding whether features should be rendered as a line or an area ([#8881], thanks [@k-yle])
 #### :white_check_mark: Validation
 * Don't warn on close-by "Stolperstein" memorials ([#8419], thanks [@paulklie])
+#### :sparkles: Usability & Accessibility
+* Always render `ref` tag as label ([#9054], thanks [@k-yle])
+* Remember last map location when no location is externally specified ([#7790], thanks [@bvercelli99])
+* Add a `crossing=traffic_signals` tag to the intersection node when using _connect features_ of a _crossing with pedestrian signals_ way in the validator ([#9176], thanks [@faebebin])
+* Don't auto-suggest tag values which have fewer than 100 uses ([#9227])
 #### :bug: Bugfixes
 * When typing an invalid unit into the Speed Limit or Max Height field, revert to the previous unit ([#9110], thanks [@1ec5])
 * Fix wikidata field displaying `[object Object]` instead of item labels after wikibase API change ([#9067])
@@ -57,6 +62,7 @@ _Breaking developer changes, which may affect downstream projects or sites that 
 * Fix missing styling when rendering of proposed footway/cycleway/path bridges ([#9172], thanks [@k-yle])
 * Fix some boundary lines (and preset) not hidden by the map features filter ([#9171], thanks [@k-yle])
 * Fix iD using invalid user selected imagery ([#8732], thanks [@renancleyson-dev])
+* Make osmose QA service work again by upgrading API calls to the newest API version ([#9208])
 #### :rocket: Presets
 * Disable taginfo suggestions for the `via` field ([#9140], thanks [@k-yle])
 * Treat `surface=chipseal` as a paved surface ([#9139], thanks [@k-yle])
@@ -68,11 +74,13 @@ _Breaking developer changes, which may affect downstream projects or sites that 
 * Upgrade dependencies: maki to `v8.0`, `osm-community-index` to `v5.2`, `d3` to `v7.6`, `togeojson` to `v5.2`, `mocha` to `v10`
 
 
+[#7790]: https://github.com/openstreetmap/iD/issues/7790
 [#8419]: https://github.com/openstreetmap/iD/issues/8419
 [#8732]: https://github.com/openstreetmap/iD/issues/8732
 [#8881]: https://github.com/openstreetmap/iD/issues/8881
 [#8975]: https://github.com/openstreetmap/iD/pull/8975
 [#9018]: https://github.com/openstreetmap/iD/issues/9018
+[#9054]: https://github.com/openstreetmap/iD/issues/9054
 [#9067]: https://github.com/openstreetmap/iD/issues/9067
 [#9074]: https://github.com/openstreetmap/iD/pull/9074
 [#9110]: https://github.com/openstreetmap/iD/issues/9110
@@ -85,11 +93,15 @@ _Breaking developer changes, which may affect downstream projects or sites that 
 [#9169]: https://github.com/openstreetmap/iD/issues/9169
 [#9171]: https://github.com/openstreetmap/iD/pull/9171
 [#9172]: https://github.com/openstreetmap/iD/pull/9172
+[#9208]: https://github.com/openstreetmap/iD/issues/9208
+[#9227]: https://github.com/openstreetmap/iD/issues/9227
 [@furkanmutlu]: https://github.com/furkanmutlu
 [@JackNUMBER]: https://github.com/JackNUMBER
 [@aaditya0000]: https://github.com/aaditya0000
 [@paulklie]: https://github.com/paulklie
 [@renancleyson-dev]: https://github.com/renancleyson-dev
+[@bvercelli99]: https://github.com/bvercelli99
+[@faebebin]:_https://github.com/faebebin
 
 
 # 2.21.1
