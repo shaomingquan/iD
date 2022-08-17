@@ -81,14 +81,9 @@ h2 {
     font-weight: bold;
     margin-bottom: 20px;
 }
-.header h2 {
-    font-size: 20px;
-    line-height: 1.25;
-    font-weight: bold;
-    margin-bottom: 0px;
-}
 
 h3:last-child,
+h2:last-child,
 h4:last-child { margin-bottom: 0;}
 
 h3 {
@@ -194,8 +189,7 @@ input[type=number],
 input[type=url],
 input[type=tel],
 input[type=email],
-input[type=date],
-input[type=color] {
+input[type=date] {
     /* need this since line-height interpretation may vary by font or browser */
     height: 2.585em;
 }
@@ -501,7 +495,6 @@ button.disabled .icon.operation use,
 
 .icon-annotation {
     color: #333;
-    vertical-align: baseline;
 }
 
 
@@ -1092,21 +1085,13 @@ a.hide-toggle {
     visibility: visible;
 }
 .preset-icon-container.showing-img *:not(.image-icon) {
-    display: none;
+    visibility: hidden;
 }
 
 .preset-icon-point-border path {
     stroke: #333;
     stroke-width: 1.2;
     fill: transparent;
-}
-
-.preset-icon-category-border path {
-    stroke: #999;
-    stroke-width: 1px;
-    fill: transparent;
-    backface-visibility: hidden;
-    vector-effect: non-scaling-stroke;
 }
 
 .preset-icon-line {
@@ -1184,7 +1169,7 @@ a.hide-toggle {
 .preset-icon.framed .icon {
     transform: scale(0.4);
 }
-.preset-icon.framed.line-geom:not(.category) .icon,
+.preset-icon.framed.line-geom .icon,
 .preset-icon.framed.route-geom .icon {
     top: 20%;
     transform: translateY(-30%) scale(0.4);
@@ -1195,7 +1180,7 @@ a.hide-toggle {
 .preset-icon-iD.framed .icon {
     transform: scale(0.74);
 }
-.preset-icon-iD.framed.line-geom:not(.category) .icon,
+.preset-icon-iD.framed.line-geom .icon,
 .preset-icon-iD.framed.route-geom .icon {
     transform: translateY(-30%) scale(0.74);
 }
@@ -1512,34 +1497,6 @@ a.hide-toggle {
     fill: #333;
     opacity: .5;
 }
-.form-field-button.colour-preview {
-    border-radius: 0 0 4px 0;
-}
-.form-field-button.colour-preview > div.colour-box {
-    border: 3px solid #fff;
-    height: 100%;
-    border-radius: 8px;
-    cursor: pointer;
-    text-align: center;
-    line-height: 20px;
-    padding: 1px 0 0 1px;
-}
-.inspector-hover .form-field-button.colour-preview > div.colour-box {
-    border-color: #ececec;
-}
-.form-field-button.colour-preview:active > div.colour-box,
-.form-field-button.colour-preview:focus > div.colour-box {
-    border-color: #f1f1f1;
-}
-@media (hover: hover) {
-    .form-field-button.colour-preview:hover > div.colour-box {
-        border-color: #f1f1f1;
-    }
-}
-.form-field-button.colour-selector {
-    visibility: hidden;
-    position: absolute;
-}
 
 
 /* round corners of first/last child elements */
@@ -1636,13 +1593,6 @@ a.hide-toggle {
     display: none;
 }
 
-.form-field-input-combo input.raw-value {
-    font-family: monospace;
-}
-.form-field-input-combo input.known-value {
-    color: #7092ff;
-}
-
 .form-field-input-multicombo ul.chiplist {
     padding: 5px 8px 5px 8px;
     background: #fff;
@@ -1670,7 +1620,6 @@ a.hide-toggle {
     background-color: #eff2f7;
     border: 1px solid #ccd5e3;
     max-width: 100%;
-    color: #7092ff;
 }
 .ideditor[dir='ltr'] .form-field-input-multicombo li.chip {
     padding: 2px 0px 2px 5px;
@@ -1685,10 +1634,6 @@ a.hide-toggle {
     opacity: 0.75;
     z-index: 3000;
     cursor: grabbing;
-}
-.form-field-input-multicombo li.chip.raw-value {
-    font-family: monospace;
-    color: #333;
 }
 .form-field-input-multicombo li.mixed {
     border-color: #eff2f7;
@@ -1738,15 +1683,11 @@ a.hide-toggle {
 
 /* Field - Text / Numeric
 ------------------------------------------------------- */
-.form-field-input-text > input:only-child,
+.form-field-input-text > input:only-of-type,
 .form-field-input-tel > input:only-of-type,
 .form-field-input-email > input:only-of-type,
-.form-field-input-url > input:only-child {
+.form-field-input-url > input:only-of-type {
     border-radius: 0 0 4px 4px;
-}
-.form-field-input-text > input:not(:only-child),
-.form-field-input-url > input:not(:only-child) {
-    border-radius: 0 0 0 4px;
 }
 .form-field-input-number > input:only-of-type {
     border-radius: 0 0 0 4px;
@@ -1921,37 +1862,26 @@ a.hide-toggle {
 }
 
 
-/* Field - roadheight and roadspeed
+/* Field - Maxspeed
 ------------------------------------------------------- */
-.form-field-input-roadheight input.roadheight-number,
-.form-field-input-roadheight input.roadheight-secondary-number,
-.form-field-input-roadspeed input.roadspeed-number {
+.form-field-input-maxspeed input.maxspeed-number {
     flex-basis: 0;
 }
-.form-field-input-roadheight input.roadheight-unit,
-.form-field-input-roadheight input.roadheight-secondary-unit {
-    flex: 0 1 auto;
-    width: 60px;
-}
-.form-field-input-roadspeed input.roadspeed-unit {
+.form-field-input-maxspeed input.maxspeed-unit {
     flex: 0 1 auto;
     width: 80px;
 }
-.ideditor[dir='ltr'] .form-field-input-roadheight > input:first-of-type,
-.ideditor[dir='ltr'] .form-field-input-roadspeed > input:first-of-type {
+.ideditor[dir='ltr'] .form-field-input-maxspeed > input:first-of-type {
     border-radius: 0 0 0 4px;
 }
-.ideditor[dir='rtl'] .form-field-input-roadheight > input:first-of-type,
-.ideditor[dir='rtl'] .form-field-input-roadspeed > input:first-of-type {
+.ideditor[dir='rtl'] .form-field-input-maxspeed > input:first-of-type {
     border-radius: 0 0 4px 0;
 }
-.ideditor[dir='ltr'] .form-field-input-roadheight > input:last-of-type,
-.ideditor[dir='ltr'] .form-field-input-roadspeed > input:last-of-type {
+.ideditor[dir='ltr'] .form-field-input-maxspeed > input:last-of-type {
     border-left: 0;
     border-radius: 0 0 4px 0;
 }
-.ideditor[dir='rtl'] .form-field-input-roadheight > input:last-of-type,
-.ideditor[dir='rtl'] .form-field-input-roadspeed > input:last-of-type {
+.ideditor[dir='rtl'] .form-field-input-maxspeed > input:last-of-type {
     border-right: 0;
     border-radius: 0 0 0 4px;
 }
@@ -2286,11 +2216,6 @@ div.combobox {
     border-top: 5px solid #ccc;
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
-}
-
-.combobox .combobox-option.raw-option {
-    font-family: monospace;
-    color: #333;
 }
 
 
@@ -2989,27 +2914,12 @@ img.tag-reference-wiki-image {
 
 /* Map Controls
 ------------------------------------------------------- */
-.map-controls-wrap {
-    position: absolute;
-    left: 0;
-    right: 0;
-    height: 100%;
-    z-index: 100;
-    display: block;
-    overflow-x: hidden;
-    overflow-y: auto;
-    pointer-events: none;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-}
-.map-controls-wrap::-webkit-scrollbar {
-    display: none;
-}
 .map-controls {
     right: 0;
     top: 0;
     width: 40px;
     position: absolute;
+    z-index: 100;
     bottom: 0;
     display: flex;
     flex-direction: column;
@@ -3069,7 +2979,7 @@ img.tag-reference-wiki-image {
 /* Fullscreen Button (disabled)
 ------------------------------------------------------- */
 div.full-screen {
-    /*display: inline-block;*/
+    display: inline-block;
     width: 40px;
     margin-right: 10px;
     display: none;
@@ -3196,7 +3106,6 @@ div.full-screen > button:focus {
 .layer-list li.best > div.best {
     padding: 5px;
     flex: 0 0 auto;
-    align-self: center;
 }
 
 .ideditor[dir='rtl'] .list-item-data-browse svg {
@@ -3228,11 +3137,9 @@ div.full-screen > button:focus {
 .layer-list label > span {
     display: block;
     overflow: hidden;
-    width: calc(100% - 20px); /* Ensures radio input width within flexbox */
-}
-
-.layer-list label span.localized-text {
-    line-height: 0.95rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    flex-grow: 1;
 }
 
 .layer-list input.list-item-input {
@@ -3294,11 +3201,11 @@ div.full-screen > button:focus {
 
 .issue-text .issue-icon {
     flex: 0 0 auto;
-    padding: 2px 3px;
+    padding: 5px 7px;
 }
 .issue-text .issue-message {
     flex: 1 1 auto;
-    padding: 4px 5px;
+    padding: 5px 0;
 }
 .issue-label .issue-autofix {
     flex: 0 0 auto;
@@ -3615,9 +3522,6 @@ li.issue-fix-item button:not(.actionable) .fix-icon {
 .issue-container:not(.active) ul.issue-fix-list {
     display: none;
 }
-.issue-container:not(.active) .issue-info {
-    display: none;
-}
 
 .issue-info {
     flex: 1 1 auto;
@@ -3661,13 +3565,12 @@ li.issue-fix-item button:not(.actionable) .fix-icon {
     padding: 10px;
 }
 
-.display-options-container label {
+.display-control h5 {
     padding-bottom: 0;
     padding-top: 10px;
 }
 
-.display-options-container label span {
-    font-weight: bold;
+.display-control h5 span {
     margin: 5px;
 }
 
@@ -4018,10 +3921,10 @@ li.issue-fix-item button:not(.actionable) .fix-icon {
     border: 1px solid #ccc;
 }
 
-/* scrollbars only when necessary*/
+/* no scrollbars */
 .inspector-hover div {
     overflow-x: visible;
-    overflow-y: auto;
+    overflow-y: visible;
 }
 
 /* hide and remove from layout */
@@ -4479,12 +4382,9 @@ img.tile-debug {
     justify-content: space-between;
     align-items: flex-end;
     z-index: 0;
-    pointer-events: none;
 }
 
-.attribution-wrap > * {
-    pointer-events: auto;
-}
+.attribution-wrap * { pointer-events: all; }
 
 .attribution-wrap .base-layer-attribution,
 .attribution-wrap .overlay-layer-attribution {
@@ -4702,11 +4602,6 @@ img.tile-debug {
     }
 }
 
-.local-storage-full {
-    display: block;
-    width: 100%;
-}
-
 /* Notification Badges
 ------------------------------------------------------- */
 /* For an icon (e.g. new version) */
@@ -4922,9 +4817,6 @@ img.tile-debug {
 .save-success td.community-detail {
     padding-bottom: 15px;
 }
-.save-success .community-table h3 {
-    margin: 0;
-}
 
 .summary-view-on-osm,
 .community-name {
@@ -4981,14 +4873,6 @@ img.tile-debug {
 .modal-actions .logo-walkthrough,
 .modal-actions .logo-features {
     color: #7092ff;
-}
-
-.modal-splash .section-preferences-third-party {
-    margin-top: 20px;
-}
-
-.modal-splash .section-preferences-third-party .privacy-link {
-    display: none;
 }
 
 
@@ -5403,26 +5287,22 @@ button.conflicts-button {
 /* dark tooltips for sidebar / panels */
 .tooltip.dark.top .popover-arrow,
 .map-pane .tooltip.top .popover-arrow,
-.sidebar .tooltip.top .popover-arrow,
-.modal .tooltip.top .popover-arrow {
+.sidebar .tooltip.top .popover-arrow {
     border-top-color: #000;
 }
 .tooltip.dark.bottom .popover-arrow,
 .map-pane .tooltip.bottom .popover-arrow,
-.sidebar .tooltip.bottom .popover-arrow,
-.modal .tooltip.bottom .popover-arrow {
+.sidebar .tooltip.bottom .popover-arrow {
     border-bottom-color: #000;
 }
 .tooltip.dark.left .popover-arrow,
 .map-pane .tooltip.left .popover-arrow,
-.sidebar .tooltip.left .popover-arrow,
-.modal .tooltip.left .popover-arrow {
+.sidebar .tooltip.left .popover-arrow {
     border-left-color: #000;
 }
 .tooltip.dark.right .popover-arrow,
 .map-pane .tooltip.right .popover-arrow,
-.sidebar .tooltip.right .popover-arrow,
-.modal .tooltip.right .popover-arrow {
+.sidebar .tooltip.right .popover-arrow {
     border-right-color: #000;
 }
 .tooltip.dark .popover-inner,
@@ -5433,8 +5313,7 @@ button.conflicts-button {
 .map-pane .keyhint-wrap,
 .sidebar .popover-inner,
 .sidebar .tooltip-heading,
-.sidebar .keyhint-wrap,
-.modal .popover-inner {
+.sidebar .keyhint-wrap {
     background: #000;
     color: #ccc;
 }
@@ -5533,6 +5412,7 @@ li.hide + li.version .badge .tooltip .popover-arrow {
     height: 20px;
     overflow: visible;
     width: 10px;
+    background: #fff;
     border-left: 1px solid #DDD;
 }
 

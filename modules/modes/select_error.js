@@ -170,6 +170,9 @@ export function modeSelectError(context, selectedErrorID, selectedErrorService) 
         errorService = nextSercice;
         return mode;
     };
+    mode.selectedErrorID = (id) => {
+        selectedErrorID = id;
+    };
 
     return mode;
 }

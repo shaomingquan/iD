@@ -34,13 +34,13 @@ path.line.stroke.tag-highway {
 
 .preset-icon .icon.tag-highway-motorway,
 .preset-icon .icon.tag-highway-motorway_link {
-    color: #CF2081;
+    color: #809bc0;
     fill: #70372f;
 }
 path.line.stroke.tag-highway-motorway,
 path.line.stroke.tag-highway-motorway_link,
 path.line.stroke.tag-motorway {
-    stroke: #CF2081;
+    stroke: #809bc0;
 }
 path.line.casing.tag-highway-motorway,
 path.line.casing.tag-highway-motorway_link,
@@ -50,13 +50,13 @@ path.line.casing.tag-motorway {
 
 .preset-icon .icon.tag-highway-trunk,
 .preset-icon .icon.tag-highway-trunk_link {
-    color: #DD2F22;
+    color: #7fc97f;
     fill: #70372f;
 }
 path.line.stroke.tag-highway-trunk,
 path.line.stroke.tag-highway-trunk_link,
 path.line.stroke.tag-trunk {
-    stroke: #DD2F22;
+    stroke: #7fc97f;
 }
 path.line.casing.tag-highway-trunk,
 path.line.casing.tag-highway-trunk_link,
@@ -66,13 +66,13 @@ path.line.casing.tag-trunk {
 
 .preset-icon .icon.tag-highway-primary,
 .preset-icon .icon.tag-highway-primary_link {
-    color: #F99806;
+    color: #fb805f;
     fill: #70372f;
 }
 path.line.stroke.tag-highway-primary,
 path.line.stroke.tag-highway-primary_link,
 path.line.stroke.tag-primary {
-    stroke: #F99806;
+    stroke: #fb805f;
 }
 path.line.casing.tag-highway-primary,
 path.line.casing.tag-highway-primary_link,
@@ -82,13 +82,13 @@ path.line.casing.tag-primary {
 
 .preset-icon .icon.tag-highway-secondary,
 .preset-icon .icon.tag-highway-secondary_link {
-    color: #F3F312;
+    color: #fdbf6f;
     fill: #70372f;
 }
 path.line.stroke.tag-highway-secondary,
 path.line.stroke.tag-highway-secondary_link,
 path.line.stroke.tag-secondary {
-    stroke: #F3F312;
+    stroke: #fdbf6f;
 }
 path.line.casing.tag-highway-secondary,
 path.line.casing.tag-highway-secondary_link,
@@ -98,13 +98,13 @@ path.line.casing.tag-secondary {
 
 .preset-icon .icon.tag-highway-tertiary,
 .preset-icon .icon.tag-highway-tertiary_link {
-    color: #FFF9B3;
+    color: #f7f496;
     fill: #70372f;
 }
 path.line.stroke.tag-highway-tertiary,
 path.line.stroke.tag-highway-tertiary_link,
 path.line.stroke.tag-tertiary {
-    stroke: #FFF9B3;
+    stroke: #f7f496;
 }
 path.line.casing.tag-highway-tertiary,
 path.line.casing.tag-highway-tertiary_link,
@@ -193,12 +193,12 @@ path.line.casing.tag-tertiary {
 }
 
 .preset-icon .icon.tag-highway-residential {
-    color: #fff;
+    color: #c0c0c0;
     fill: #444;
 }
 path.line.stroke.tag-highway-residential,
 path.line.stroke.tag-residential {
-    stroke: #fff;
+    stroke: #c0c0c0;
 }
 path.line.casing.tag-highway-residential,
 path.line.casing.tag-residential {
@@ -363,13 +363,13 @@ path.line.casing.tag-corridor {
 
 /* pedestrian streets */
 .preset-icon .icon.tag-highway-pedestrian {
-    color: #988;
+    color: #00ff00;
 }
 path.line.stroke.tag-highway-pedestrian,
 path.line.stroke.tag-pedestrian {
-    stroke: #fff;
-    stroke-width: 3.5;
-    stroke-dasharray: 8, 8;
+    stroke: #00ff00;
+    stroke-width: 2;
+    stroke-dasharray: none;
     stroke-linecap: butt;
 }
 .low-zoom path.line.stroke.tag-highway-pedestrian,
@@ -379,7 +379,7 @@ path.line.stroke.tag-pedestrian {
 }
 path.line.casing.tag-highway-pedestrian,
 path.line.casing.tag-pedestrian {
-    stroke: #988;
+    stroke: #00ff00;
     stroke-linecap: round;
     stroke-dasharray: none;
 }
@@ -403,8 +403,8 @@ path.line.casing.tag-road {
 
 /* service roads */
 path.line.stroke.tag-highway-service,
-path.line.stroke.tag-service {
-    stroke: #fff;
+path.line.stroke.tag-service { /* TODO: check */
+    stroke: #809bc0;
 }
 path.line.casing.tag-highway-service,
 path.line.casing.tag-service {
@@ -416,7 +416,7 @@ path.line.casing.tag-service {
 path.line.stroke.tag-highway-bus_guideway,
 path.line.stroke.tag-highway-service.tag-service,
 path.line.stroke.tag-service.tag-service {
-    stroke: #dca;
+    stroke: #809bc0;
 }
 path.line.casing.tag-highway-bus_guideway,
 path.line.casing.tag-highway-service.tag-service,
@@ -466,7 +466,6 @@ path.line.stroke.tag-footway-access_aisle,
 path.line.stroke.tag-public_transport-platform,
 path.line.stroke.tag-highway-platform,
 path.line.stroke.tag-railway-platform,
-path.line.stroke.tag-railway-platform_edge,
 path.line.stroke.tag-man_made-pier {
     stroke: #dca;
 }
@@ -480,12 +479,14 @@ path.line.casing.tag-highway.tag-footway-access_aisle {
     stroke-linecap: round;
     stroke-dasharray: none;
 }
-path.line.casing.tag-highway-footway,
 path.line.casing.tag-highway-cycleway,
 path.line.casing.tag-highway-bridleway {
     stroke: #fff;
     stroke-linecap: round;
     stroke-dasharray: none;
+}
+path.line.casing.tag-highway-footway {
+    stroke: #666;
 }
 
 .preset-icon .icon.tag-highway-path,
@@ -508,10 +509,15 @@ path.line.stroke.tag-highway-path.tag-bridge-boardwalk {
     color: #988;
     fill: #fff;
 }
-path.line.stroke.tag-highway-footway,
-path.line.stroke.tag-highway_bus_stop,
-.preset-icon-container path.casing.tag-highway-footway {
+path.line.stroke.tag-highway-footway {
+    stroke: #00ff00;
+    stroke-dasharray: none;
+}
+path.line.stroke.tag-highway_bus_stop {
     stroke: #988;
+}
+.preset-icon-container path.casing.tag-highway-footway {
+    stroke: #666;
 }
 .preset-icon .icon.tag-highway-footway.tag-footway-sidewalk {
     color: #d4b4b4;
@@ -527,15 +533,17 @@ path.stroke.tag-highway-footway.tag-footway-sidewalk,
 /* cycleways */
 .preset-icon .icon.tag-route-bicycle,
 .preset-icon .icon.tag-highway-cycleway {
-    color: #58a9ed;
-    fill: #fff;
+    color: #b100ff;
+    fill: #b100ff;
 }
 path.line.stroke.tag-highway-cycleway,
+path.line.casing.tag-highway-cycleway,
 .preset-icon-container path.casing.tag-highway-cycleway {
-    stroke: #58a9ed;
+    stroke: #b100ff;
+    stroke-dasharray: none;
 }
 .preset-icon-container path.stroke.tag-highway-cycleway:not(.tag-crossing) {
-    stroke: #fff;
+    stroke: #b100ff;
 }
 
 /* bridleways */
@@ -566,7 +574,7 @@ path.line.stroke.tag-leisure-track,
 
 /* steps */
 .preset-icon .icon.tag-highway-steps {
-    color: #81d25c;
+    color: #00ff00;
     fill: #fff;
 }
 path.line.stroke.tag-highway-steps {
@@ -577,13 +585,13 @@ path.line.stroke.tag-highway-steps {
     stroke-dasharray: 2, 2;
 }
 path.line.casing.tag-highway-steps {
-    stroke: #fff;
+    stroke: transparent;
     stroke-linecap: round;
     stroke-dasharray: none;
 }
 path.line.stroke.tag-highway-steps,
 .preset-icon-container path.line.casing.tag-highway-steps {
-    stroke: #81d25c;
+    stroke: #00ff00;
 }
 .preset-icon-container path.line.stroke.tag-highway-steps {
     stroke: #fff;
@@ -624,11 +632,13 @@ path.line.stroke.tag-highway-cycleway.tag-crossing-marked {
 
 path.line.stroke.tag-highway.tag-footway-access_aisle {
     stroke-dasharray: 4, 2;
-    stroke: #4c4444;
 }
 .low-zoom path.line.stroke.tag-highway.tag-footway-access_aisle,
 .preset-icon-container path.stroke.tag-highway.tag-footway-access_aisle {
     stroke-dasharray: 2.5, 1.5;
+}
+path.line.stroke.tag-highway.tag-footway-access_aisle {
+    stroke: #4c4444;
 }
 .preset-icon .icon.tag-highway.tag-footway-access_aisle {
     color: #4c4444;

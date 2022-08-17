@@ -7,7 +7,7 @@
 }
 .preset-icon .icon.tag-type-waterway:not(.tag-waterway-dam),
 .preset-icon .icon.tag-waterway:not(.tag-waterway-dam) {
-    color: #7dd;
+    color: #00f;
     fill: #fff;
 }
 
@@ -40,7 +40,7 @@ path.line.casing.tag-waterway:not(.tag-waterway-dam) {
     stroke: #444;
 }
 path.line.stroke.tag-waterway:not(.tag-waterway-dam) {
-    stroke: #7dd;
+    stroke: #00f;
 }
 
 

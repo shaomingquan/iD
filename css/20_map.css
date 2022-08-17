@@ -4,11 +4,25 @@
 }
 
 /* IE/Edge needs these overrides for markers to show up */
-.layer-osm path.oneway-marker-path          { fill: #000; }
-.layer-osm path.sided-marker-natural-path   { fill: rgb(170, 170, 170); }
-.layer-osm path.sided-marker-coastline-path { fill: #77dede; }
-.layer-osm path.sided-marker-barrier-path   { fill: #ddd; }
-.layer-osm path.sided-marker-man_made-path  { fill: #fff; }
+.layer-osm path.oneway-marker-path {
+    fill: #000;
+}
+
+.layer-osm path.sided-marker-natural-path {
+    fill: rgb(170, 170, 170);
+}
+
+.layer-osm path.sided-marker-coastline-path {
+    fill: #77dede;
+}
+
+.layer-osm path.sided-marker-barrier-path {
+    fill: #ddd;
+}
+
+.layer-osm path.sided-marker-man_made-path {
+    fill: #fff;
+}
 
 /* IE/Edge rule for <use> marker style */
 .layer-osm path.viewfield-marker-path {
@@ -18,16 +32,41 @@
     stroke-width: 0.5px;
     stroke-opacity: 0.75;
 }
-.fill-wireframe .layer-osm path.viewfield-marker-path {   /* IE/Edge rule for <use> marker style */
+
+.fill-wireframe .layer-osm path.viewfield-marker-path {
+    /* IE/Edge rule for <use> marker style */
     fill: none;
 }
 
 /* the above fill: none rule affects paths in <use> shadow dom only in Firefox */
-.layer-osm use.icon path { fill: #333; }                       /* FF svg Maki icons */
-.layer-osm .turn use path { fill: #000; }                      /* FF turn restriction icons */
-#turn-only-shape2, #turn-only-u-shape2 { fill: #7092ff; }      /* FF turn-only, turn-only-u */
-#turn-no-shape2, #turn-no-u-shape2     { fill: #e06d5f; }      /* FF turn-no, turn-no-u */
-#turn-yes-shape2, #turn-yes-u-shape2   { fill: #8cd05f; }      /* FF turn-yes, turn-yes-u */
+.layer-osm use.icon path {
+    fill: #333;
+}
+
+/* FF svg Maki icons */
+.layer-osm .turn use path {
+    fill: #000;
+}
+
+/* FF turn restriction icons */
+#turn-only-shape2,
+#turn-only-u-shape2 {
+    fill: #7092ff;
+}
+
+/* FF turn-only, turn-only-u */
+#turn-no-shape2,
+#turn-no-u-shape2 {
+    fill: #e06d5f;
+}
+
+/* FF turn-no, turn-no-u */
+#turn-yes-shape2,
+#turn-yes-u-shape2 {
+    fill: #8cd05f;
+}
+
+/* FF turn-yes, turn-yes-u */
 
 
 /* No interactivity except what we specifically allow */
@@ -55,6 +94,7 @@
     stroke: none;
 }
 
+.qaItem.path.target,
 .way.target {
     pointer-events: stroke;
     fill: none;
@@ -68,9 +108,11 @@
 .ideditor[pointer='pen'] .way.target {
     stroke-width: 18;
 }
+
 .ideditor[pointer='touch'] .way.target {
     stroke-width: 32;
 }
+
 .ideditor[pointer='touch'] .node.vertex.target {
     pointer-events: painted;
     stroke: currentColor;
@@ -143,6 +185,7 @@ g.point.selected .shadow {
 g.point ellipse.stroke {
     display: none;
 }
+
 .ideditor.mode-drag-note g.note.active ellipse.stroke,
 .ideditor.mode-drag-node g.point.active ellipse.stroke {
     display: block;
@@ -153,14 +196,17 @@ g.point ellipse.stroke {
 g.vertex .fill {
     fill: #000;
 }
+
 g.vertex .stroke {
     stroke: #666;
     stroke-width: 1;
     fill: white;
 }
+
 g.vertex.shared .stroke {
     fill: #bbb;
 }
+
 g.midpoint .fill {
     fill: #eee;
     stroke: #444;
@@ -191,6 +237,7 @@ g.vertex.selected .shadow {
 .preset-icon .icon.iD-other-line {
     color: #989898;
 }
+
 .preset-icon-container path.line.casing {
     stroke: #afafaf;
 }
@@ -263,8 +310,8 @@ text.pointlabel {
 /* Safari 10 seems to have regressed too */
 .linelabel-halo .textpath,
 .linelabel .textpath {
-  baseline-shift: -33%;
-  dominant-baseline: auto;
+    baseline-shift: -33%;
+    dominant-baseline: auto;
 }
 
 .labels-group.halo text {
@@ -277,6 +324,7 @@ text.pointlabel {
 text.nolabel {
     opacity: 0 !important;
 }
+
 text.point {
     font-size: 10px;
 }
@@ -287,6 +335,7 @@ text.point {
     stroke-width: 2px;
     stroke-miterlimit: 1;
 }
+
 .icon.areaicon {
     fill: #222;
     opacity: 0.8;
@@ -299,6 +348,7 @@ g.point.tag-wikidata path.stroke {
     stroke: #666;
     fill: #eee;
 }
+
 g.point.tag-wikidata .icon {
     color: #666;
 }
@@ -317,6 +367,7 @@ path.shadow.highlighted {
     stroke-opacity: 0.95;
     stroke: #7092ff;
 }
+
 g.vertex.highlighted .shadow {
     stroke-width: 7;
     stroke-opacity: 0.95;
@@ -343,14 +394,17 @@ g.vertex.highlighted .shadow {
     stroke-opacity: 0.7;
     stroke: #777;
 }
+
 .surface.tr path.shadow.related.allow,
 .surface.tr g.vertex.related.allow .shadow {
     stroke: #5b3;
 }
+
 .surface.tr path.shadow.related.restrict,
 .surface.tr g.vertex.related.restrict .shadow {
     stroke: #d53;
 }
+
 .surface.tr path.shadow.related.only,
 .surface.tr g.vertex.related.only .shadow {
     stroke: #68f;
@@ -367,35 +421,41 @@ g.vertex.highlighted .shadow {
 */
 
 /* Vertex visual diffs */
-.highlight-edited g.points g.node.vertex.added > circle.shadow,
-.highlight-edited g.points g.node.vertex.retagged > circle.shadow,
-.highlight-edited g.points g.node.vertex.moved > circle.shadow {
+.highlight-edited g.points g.node.vertex.added>circle.shadow,
+.highlight-edited g.points g.node.vertex.retagged>circle.shadow,
+.highlight-edited g.points g.node.vertex.moved>circle.shadow {
     fill-opacity: 0.8;
 }
-.highlight-edited g.points g.node.vertex.added > circle.shadow {
+
+.highlight-edited g.points g.node.vertex.added>circle.shadow {
     fill: rgb(133, 255, 103);
 }
-.highlight-edited g.points g.node.vertex.retagged > circle.shadow {
+
+.highlight-edited g.points g.node.vertex.retagged>circle.shadow {
     fill: #fcde5a;
 }
-.highlight-edited g.points g.node.vertex.moved > circle.shadow {
+
+.highlight-edited g.points g.node.vertex.moved>circle.shadow {
     fill: rgb(255, 126, 46);
 }
 
 /* Point visual diffs */
-.highlight-edited g.points g.node.point.added > path.shadow,
-.highlight-edited g.points g.node.point.retagged > path.shadow,
-.highlight-edited g.points g.node.point.moved > path.shadow {
+.highlight-edited g.points g.node.point.added>path.shadow,
+.highlight-edited g.points g.node.point.retagged>path.shadow,
+.highlight-edited g.points g.node.point.moved>path.shadow {
     stroke-opacity: 0.8;
     stroke-width: 10;
 }
-.highlight-edited g.points g.node.point.added > path.shadow {
+
+.highlight-edited g.points g.node.point.added>path.shadow {
     stroke: rgb(133, 255, 103);
 }
-.highlight-edited g.points g.node.point.retagged > path.shadow {
+
+.highlight-edited g.points g.node.point.retagged>path.shadow {
     stroke: #fcde5a;
 }
-.highlight-edited g.points g.node.point.moved > path.shadow {
+
+.highlight-edited g.points g.node.point.moved>path.shadow {
     stroke: rgb(255, 126, 46);
 }
 
@@ -403,8 +463,8 @@ g.vertex.highlighted .shadow {
 - segments are rendered on top of the ways for convenience and to differentiate
   them from entire line diffs, so make them thin
 */
-.highlight-edited g.lines > path.line.segment-edited,
-.highlight-edited g.areas > path.area.segment-edited {
+.highlight-edited g.lines>path.line.segment-edited,
+.highlight-edited g.areas>path.area.segment-edited {
     stroke: rgb(255, 126, 46);
     stroke-dasharray: 10, 3;
     stroke-width: 1.5 !important;
@@ -420,6 +480,7 @@ g.vertex.highlighted .shadow {
 .highlight-edited path.area.shadow.geometry-edited {
     stroke-opacity: 0.6;
 }
+
 .highlight-edited.fill-wireframe path.line.shadow.added,
 .highlight-edited.fill-wireframe path.line.shadow.retagged,
 .highlight-edited.fill-wireframe path.line.shadow.geometry-edited,
@@ -428,14 +489,17 @@ g.vertex.highlighted .shadow {
 .highlight-edited.fill-wireframe path.area.shadow.geometry-edited {
     stroke-width: 3;
 }
+
 .highlight-edited path.line.shadow.added,
 .highlight-edited path.area.shadow.added {
     stroke: rgb(133, 255, 103);
 }
+
 .highlight-edited path.area.shadow.retagged,
 .highlight-edited path.line.shadow.retagged {
     stroke: #fcde5a;
 }
+
 .highlight-edited path.line.shadow.geometry-edited,
 .highlight-edited path.area.shadow.geometry-edited {
     stroke: rgb(255, 126, 46);
