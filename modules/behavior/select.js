@@ -293,17 +293,20 @@ export function behaviorSelect(context) {
             alsoSelectId,
             originalDatum,
         };
-        const {
-            isHooked,
-            hookProps: {
-                useDefaultAfterProcess
+
+        if (window.selectBehaviorProcessClickHook && window.selectBehaviorProcessClickHook.execHooks) {
+            const {
+                isHooked,
+                hookProps: {
+                    useDefaultAfterProcess
+                }
+            } = window.selectBehaviorProcessClickHook.execHooks(dataForHook);
+            if (isHooked) {
+                if (useDefaultAfterProcess) {
+                    defaultAfterProcess();
+                }
+                return;
             }
-        } = window.selectBehaviorProcessClickHook.execHooks(dataForHook);
-        if (isHooked) {
-            if (useDefaultAfterProcess) {
-                defaultAfterProcess();
-            }
-            return;
         }
 
         if (datum instanceof osmEntity) {

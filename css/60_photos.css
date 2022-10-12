@@ -233,14 +233,14 @@
 }
 
 
-/* OpenStreetCam Image Layer */
-.layer-openstreetcam {
+/* KartaView Image Layer */
+.layer-kartaview {
     pointer-events: none;
 }
-.layer-openstreetcam .viewfield-group * {
+.layer-kartaview .viewfield-group * {
     fill: #20c4ff;
 }
-.layer-openstreetcam .sequence {
+.layer-kartaview .sequence {
     stroke: #20c4ff;
 }
 
