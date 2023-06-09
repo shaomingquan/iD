@@ -140,7 +140,7 @@ export function uiCommit(context) {
         var tags = Object.assign({}, context.changeset.tags);   // shallow copy
 
         // assign tags for imagery used
-        var imageryUsed = context.cleanTagValue(context.history().imageryUsed().join(';'));
+        var imageryUsed = context.cleanTagValue(context.history().imageryUsed().filter(imageryName => imageryName.toLowerCase() !== 'kartaview-private').join(';'));
         tags.imagery_used = imageryUsed || 'None';
 
         // assign tags for closed issues and notes

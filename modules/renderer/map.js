@@ -411,7 +411,7 @@ export function rendererMap(context) {
     function editOff() {
         context.features().resetStats();
         surface.selectAll('.layer-osm *').remove();
-        surface.selectAll('.layer-touch:not(.markers) *').remove();
+        surface.selectAll('.layer-touch:not(.markers, .paths) *').remove();
 
         var allowed = {
             'browse': true,
